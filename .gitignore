@@ -1,0 +1,8 @@
+# Bỏ qua các thư mục build của C#
+[Bb]in/
+[Oo]bj/
+
+# Bỏ qua các file do Visual Studio tạo ra
+.vs/
+*.suo
+*.user

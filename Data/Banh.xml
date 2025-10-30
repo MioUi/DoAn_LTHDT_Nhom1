@@ -1,0 +1,130 @@
+<DanhSachSanPham>
+  <SanPham LoaiBanh="CBanhNgot">
+    <MaSanPham>BN01</MaSanPham>
+    <TenBanh>Bánh Flan</TenBanh>
+    <NgaySanXuat>27/10/2025</NgaySanXuat>
+    <HanSuDung>31/10/2025</HanSuDung>
+    <GiaBan>25000</GiaBan>
+    <CachBaoQuan>Lạnh</CachBaoQuan>
+  </SanPham>
+  <SanPham LoaiBanh="CBanhNgot">
+    <MaSanPham>BN02</MaSanPham>
+    <TenBanh>Bánh Panna Cotta Dâu</TenBanh>
+    <NgaySanXuat>27/10/2025</NgaySanXuat>
+    <HanSuDung>30/10/2025</HanSuDung>
+    <GiaBan>45000</GiaBan>
+    <CachBaoQuan>Lạnh</CachBaoQuan>
+  </SanPham>
+  <SanPham LoaiBanh="CBanhNgot">
+    <MaSanPham>BN03</MaSanPham>
+    <TenBanh>Bánh Tart Trứng</TenBanh>
+    <NgaySanXuat>27/10/2025</NgaySanXuat>
+    <HanSuDung>30/10/2025</HanSuDung>
+    <GiaBan>25000</GiaBan>
+    <CachBaoQuan>Không lạnh</CachBaoQuan>
+  </SanPham>
+  <SanPham LoaiBanh="CBanhNgot">
+    <MaSanPham>BN04</MaSanPham>
+    <TenBanh>Bánh Su Kem</TenBanh>
+    <NgaySanXuat>27/10/2025</NgaySanXuat>
+    <HanSuDung>29/10/2025</HanSuDung>
+    <GiaBan>20000</GiaBan>
+    <CachBaoQuan>Lạnh</CachBaoQuan>
+  </SanPham>
+  <SanPham LoaiBanh="CBanhNgot">
+    <MaSanPham>BN05</MaSanPham>
+    <TenBanh>Bánh Donut Đường</TenBanh>
+    <NgaySanXuat>27/10/2025</NgaySanXuat>
+    <HanSuDung>30/10/2025</HanSuDung>
+    <GiaBan>22000</GiaBan>
+    <CachBaoQuan>Không lạnh</CachBaoQuan>
+  </SanPham>
+  <SanPham LoaiBanh="CBanhKem">
+    <MaSanPham>BK01</MaSanPham>
+    <TenBanh>Bánh Kem Tiramisu</TenBanh>
+    <NgaySanXuat>27/10/2025</NgaySanXuat>
+    <HanSuDung>01/11/2025</HanSuDung>
+    <GiaBan>450000</GiaBan>
+    <KichThuoc>20</KichThuoc>
+  </SanPham>
+  <SanPham LoaiBanh="CBanhKem">
+    <MaSanPham>BK02</MaSanPham>
+    <TenBanh>Bánh Kem Red Velvet</TenBanh>
+    <NgaySanXuat>27/10/2025</NgaySanXuat>
+    <HanSuDung>03/11/2025</HanSuDung>
+    <GiaBan>700000</GiaBan>
+    <KichThuoc>28</KichThuoc>
+  </SanPham>
+  <SanPham LoaiBanh="CBanhKem">
+    <MaSanPham>BK03</MaSanPham>
+    <TenBanh>Bánh Mousse Chanh Dây</TenBanh>
+    <NgaySanXuat>27/10/2025</NgaySanXuat>
+    <HanSuDung>31/10/2025</HanSuDung>
+    <GiaBan>380000</GiaBan>
+    <KichThuoc>18</KichThuoc>
+  </SanPham>
+  <SanPham LoaiBanh="CBanhKem">
+    <MaSanPham>BK04</MaSanPham>
+    <TenBanh>Bánh Black Forest</TenBanh>
+    <NgaySanXuat>27/10/2025</NgaySanXuat>
+    <HanSuDung>02/11/2025</HanSuDung>
+    <GiaBan>550000</GiaBan>
+    <KichThuoc>24</KichThuoc>
+  </SanPham>
+  <SanPham LoaiBanh="CBanhKem">
+    <MaSanPham>BK05</MaSanPham>
+    <TenBanh>Bánh Cheesecake Dâu</TenBanh>
+    <NgaySanXuat>27/10/2025</NgaySanXuat>
+    <HanSuDung>02/11/2025</HanSuDung>
+    <GiaBan>420000</GiaBan>
+    <KichThuoc>20</KichThuoc>
+  </SanPham>
+  <SanPham LoaiBanh="CBanhHandmade">
+    <MaSanPham>BH01</MaSanPham>
+    <TenBanh>Bánh Bao Chỉ</TenBanh>
+    <NgaySanXuat>27/10/2025</NgaySanXuat>
+    <HanSuDung>30/10/2025</HanSuDung>
+    <GiaBan>67531</GiaBan>
+    <DongBanh>Việt Nam</DongBanh>
+  </SanPham>
+  <SanPham LoaiBanh="CBanhHandmade">
+    <MaSanPham>BH02</MaSanPham>
+    <TenBanh>Bánh Pía Sóc Trăng</TenBanh>
+    <NgaySanXuat>27/10/2025</NgaySanXuat>
+    <HanSuDung>28/11/2025</HanSuDung>
+    <GiaBan>84414</GiaBan>
+    <DongBanh>Sóc Trăng</DongBanh>
+  </SanPham>
+  <SanPham LoaiBanh="CBanhHandmade">
+    <MaSanPham>BH03</MaSanPham>
+    <TenBanh>Bánh Dừa Nướng</TenBanh>
+    <NgaySanXuat>27/10/2025</NgaySanXuat>
+    <HanSuDung>27/12/2025</HanSuDung>
+    <GiaBan>50647</GiaBan>
+    <DongBanh>Quảng Nam</DongBanh>
+  </SanPham>
+  <SanPham LoaiBanh="CBanhHandmade">
+    <MaSanPham>BH04</MaSanPham>
+    <TenBanh>Bánh Cốm Hà Nội</TenBanh>
+    <NgaySanXuat>27/10/2025</NgaySanXuat>
+    <HanSuDung>29/10/2025</HanSuDung>
+    <GiaBan>56275</GiaBan>
+    <DongBanh>Hà Nội</DongBanh>
+  </SanPham>
+  <SanPham LoaiBanh="CBanhHandmade">
+    <MaSanPham>BH05</MaSanPham>
+    <TenBanh>Bánh Đậu Xanh Hải Dương</TenBanh>
+    <NgaySanXuat>20/07/2025</NgaySanXuat>
+    <HanSuDung>20/01/2026</HanSuDung>
+    <GiaBan>61903</GiaBan>
+    <DongBanh>Hải Dương</DongBanh>
+  </SanPham>
+  <SanPham LoaiBanh="CBanhKem">
+    <MaSanPham>BK06</MaSanPham>
+    <TenBanh>Bánh Flan</TenBanh>
+    <NgaySanXuat>29/10/2025</NgaySanXuat>
+    <HanSuDung>31/10/2025</HanSuDung>
+    <GiaBan>350000</GiaBan>
+    <KichThuoc>28</KichThuoc>
+  </SanPham>
+</DanhSachSanPham>
