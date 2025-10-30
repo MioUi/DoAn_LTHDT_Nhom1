@@ -23,7 +23,6 @@ namespace DTO_QLTiemBanhNgot
                 _maKH = value;
             }
         }
-
         public string TenKH
         {
             get { return _tenKH; }
@@ -34,7 +33,6 @@ namespace DTO_QLTiemBanhNgot
                 _tenKH = value;
             }
         }
-
         public string SoDienThoai
         {
             get { return _soDienThoai; }
@@ -45,7 +43,6 @@ namespace DTO_QLTiemBanhNgot
                 _soDienThoai = value;
             }
         }
-
         public List<CHoaDon> LichSuMuaHang
         {
             get { return _lichSuMuaHang; }
@@ -55,7 +52,6 @@ namespace DTO_QLTiemBanhNgot
         {
             _lichSuMuaHang = new List<CHoaDon>();
         }
-
         public CKhachHang(string makh, string tenkh, string sodienthoai)
         {
             MaKH = makh;
@@ -72,22 +68,11 @@ namespace DTO_QLTiemBanhNgot
                 tongSoLuong += hd.ChiTietDonHang.Values.Sum();
             return tongSoLuong; 
         }
-        public double TinhTongChiTieu()
-        {
-            double tongTien = 0;
-            foreach (CHoaDon hd in _lichSuMuaHang)
-                tongTien += hd.TinhThanhTien();
-            return tongTien;
-        }
         public void ThemHoaDon(CHoaDon hoadon)
         {
             if (hoadon != null)
                 _lichSuMuaHang.Add(hoadon);
         }
-
-        public void HienThiThongTin()
-        {
-            Console.WriteLine($"Mã KH: {MaKH}, Tên: {TenKH}, SĐT: {SoDienThoai}");
-        }
     }
 }
+    

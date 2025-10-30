@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace DTO_QLTiemBanhNgot
+﻿namespace DTO_QLTiemBanhNgot
 {
     public interface ITroGia
     {

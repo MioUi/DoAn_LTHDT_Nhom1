@@ -19,7 +19,8 @@ namespace BLL_QLTiemBanhNgot
             _xuLyFile = new CXmlData();
             DocDuLieu();
         }
-        public void DocDuLieu()
+
+        private void DocDuLieu()
         {
             try
             {
@@ -42,7 +43,7 @@ namespace BLL_QLTiemBanhNgot
                 Console.WriteLine("Chương trình sẽ tiếp tục với danh sách rỗng.");
             }
         }
-        public void LuuDanhSachSanPham()
+        private void LuuDanhSachSanPham()
         {
             try
             {
@@ -56,6 +57,32 @@ namespace BLL_QLTiemBanhNgot
             {
                 Console.WriteLine($"LỖI KHI LƯU FILE SP: {ex.Message}");
             }
+        }
+        private string TaoMaSanPhamMoi(Type loaiBanh)
+        {
+            string maLonNhat = string.Empty;
+            string maLoai = string.Empty;
+            int soHienTai = 0;
+
+            if (loaiBanh == typeof(CBanhNgot))
+            {
+                maLoai = "BN";
+                maLonNhat = _danhSachSanPham.OfType<CBanhNgot>().Select(sp => sp.MaSP).DefaultIfEmpty("BN00").Max();
+            }
+            else if (loaiBanh == typeof(CBanhKem))
+            {
+                maLoai = "BK";
+                maLonNhat = _danhSachSanPham.OfType<CBanhKem>().Select(sp => sp.MaSP).DefaultIfEmpty("BK00").Max();
+            }
+            else if (loaiBanh == typeof(CBanhHandmade))
+            {
+                maLoai = "BH";
+                maLonNhat = _danhSachSanPham.OfType<CBanhHandmade>().Select(sp => sp.MaSP).DefaultIfEmpty("BH00").Max();
+            }
+
+            soHienTai = int.Parse(maLonNhat.Substring(2));
+            int soTiepTheo = soHienTai + 1;
+            return maLoai + soTiepTheo.ToString("D2");
         }
         public void ThemSanPham(CSanPham sanphammoi)
         {
@@ -73,34 +100,6 @@ namespace BLL_QLTiemBanhNgot
 
             _danhSachSanPham.Add(sanphammoi);
             LuuDanhSachSanPham();
-        }
-        public string TaoMaSanPhamMoi(Type loaiBanh)
-        {
-            string maLonNhat = string.Empty;
-            string maLoai = string.Empty;
-            int soHienTai = 0;
-
-            if (loaiBanh == typeof(CBanhNgot))
-            {
-                maLoai = "BN";
-                maLonNhat = _danhSachSanPham.OfType<CBanhNgot>().Select(sp => sp.MaSP).Max();
-            }
-            else if (loaiBanh == typeof(CBanhKem))
-            {
-                maLoai = "BK";
-                maLonNhat = _danhSachSanPham.OfType<CBanhKem>().Select(sp => sp.MaSP).Max();
-            }
-            else if (loaiBanh == typeof(CBanhHandmade))
-            {
-                maLoai = "BH";
-                maLonNhat = _danhSachSanPham.OfType<CBanhHandmade>().Select(sp => sp.MaSP).Max();
-            }
-
-            soHienTai = int.Parse(maLonNhat.Substring(2));
-
-            int soTiepTheo = soHienTai + 1;
-
-            return maLoai + soTiepTheo.ToString("D2");
         }
         public List<CSanPham> LayTatCaSanPham()
         {

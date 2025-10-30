@@ -22,11 +22,6 @@ namespace DTO_QLTiemBanhNgot
             CachBaoQuan = cachbaoquan;
         }
 
-        public override void HienThiThongTin()
-        {
-            base.HienThiThongTin();
-            Console.WriteLine($"Cách bảo quản: {CachBaoQuan}");
-        }
         public double TinhTienTroGia()
         {
             return 1000;

@@ -5,7 +5,6 @@ namespace DTO_QLTiemBanhNgot
     public class CBanhKem : CSanPham
     {
         private int _kichThuoc;
-
         public int KichThuoc
         {
             get { return _kichThuoc; }
@@ -23,11 +22,6 @@ namespace DTO_QLTiemBanhNgot
             KichThuoc = kichthuoc;
         }
 
-        public override void HienThiThongTin()
-        {
-            base.HienThiThongTin();
-            Console.WriteLine($"Kích thước: {KichThuoc} cm");
-        }
         public override double TinhTienGiamGia()
         {
             if (KichThuoc >= 28)

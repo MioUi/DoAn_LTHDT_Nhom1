@@ -73,10 +73,10 @@ namespace DAL_QLTiemBanhNgot
             }
             return dssp;
         }
-
         public List<CKhachHang> DocDanhSachKhachHang(string duongdan, List<CSanPham> danhSachTatCaSanPham)
         {
             Dictionary<string, CSanPham> sanPhamDict = danhSachTatCaSanPham.ToDictionary(sp => sp.MaSP, StringComparer.OrdinalIgnoreCase);
+
             List<CKhachHang> dskh = new List<CKhachHang>();
             XmlDocument doc = new XmlDocument();
             doc.Load(duongdan);
@@ -101,24 +101,17 @@ namespace DAL_QLTiemBanhNgot
                             string maHD = hdNode["MaHD"].InnerText;
                             DateTime ngayMua = DateTime.ParseExact(hdNode["NgayMua"].InnerText, dinhDangXML, CultureInfo.InvariantCulture);
                             Dictionary<CSanPham, int> chiTietHoaDon = new Dictionary<CSanPham, int>();
+
                             XmlNodeList spMuaNodes = hdNode.SelectNodes("SanPham");
                             foreach (XmlNode spMuaNode in spMuaNodes)
                             {
                                 string maSPMua = spMuaNode["MaSP"].InnerText;
                                 int soLuongMua = int.Parse(spMuaNode["SoLuong"].InnerText);
 
-                                CSanPham spThucTe;
-                                if (sanPhamDict.TryGetValue(maSPMua, out spThucTe))
-                                {
+                                if (sanPhamDict.TryGetValue(maSPMua, out CSanPham spThucTe))
                                     chiTietHoaDon.Add(spThucTe, soLuongMua);
-                                }
-                                else
-                                {
-                                    Console.WriteLine($"Cảnh báo: Không tìm thấy sản phẩm có mã '{maSPMua}'... Bỏ qua.");
-                                }
                             }
                             CHoaDon hoaDonMoi = new CHoaDon(maHD, ngayMua, chiTietHoaDon);
-
                             kh.ThemHoaDon(hoaDonMoi);
                         }
                         catch (Exception ex)
@@ -131,7 +124,6 @@ namespace DAL_QLTiemBanhNgot
             }
             return dskh;
         }
-
         public void LuuDanhSachSanPham(string duongdan, List<CSanPham> dssp)
         {
             XmlDocument doc = new XmlDocument();
@@ -183,62 +175,6 @@ namespace DAL_QLTiemBanhNgot
                 }
 
                 root.AppendChild(spNode);
-            }
-            doc.Save(duongdan);
-        }
-
-        public void LuuDanhSachKhachHang(string duongdan, List<CKhachHang> dskh)
-        {
-            XmlDocument doc = new XmlDocument();
-            XmlElement root = doc.CreateElement("DanhSachKhachHang");
-            doc.AppendChild(root);
-
-            foreach (CKhachHang kh in dskh)
-            {
-                XmlElement khNode = doc.CreateElement("KhachHang");
-
-                XmlElement maKH = doc.CreateElement("MaKH"); 
-                maKH.InnerText = kh.MaKH; 
-                khNode.AppendChild(maKH);
-
-                XmlElement tenKH = doc.CreateElement("TenKH");
-                tenKH.InnerText = kh.TenKH; 
-                khNode.AppendChild(tenKH);
-
-                XmlElement sdt = doc.CreateElement("SoDienThoai"); 
-                sdt.InnerText = kh.SoDienThoai;
-                khNode.AppendChild(sdt);
-
-                XmlElement lichSuNode = doc.CreateElement("LichSuMuaHang");
-                foreach (CHoaDon hd in kh.LichSuMuaHang)
-                {
-                    XmlElement hoaDonNode = doc.CreateElement("HoaDon");
-
-                    XmlElement maHD = doc.CreateElement("MaHD"); 
-                    maHD.InnerText = hd.MaHD; 
-                    hoaDonNode.AppendChild(maHD);
-
-                    XmlElement ngayMua = doc.CreateElement("NgayMua"); 
-                    ngayMua.InnerText = hd.NgayMua.ToString(dinhDangXML); 
-                    hoaDonNode.AppendChild(ngayMua);
-
-                    foreach (KeyValuePair<CSanPham, int> muc in hd.ChiTietDonHang)
-                    {
-                        XmlElement spMuaNode = doc.CreateElement("SanPham");
-
-                        XmlElement maSPMua = doc.CreateElement("MaSP"); 
-                        maSPMua.InnerText = muc.Key.MaSP; 
-                        spMuaNode.AppendChild(maSPMua);
-
-                        XmlElement soLuongMua = doc.CreateElement("SoLuong"); 
-                        soLuongMua.InnerText = muc.Value.ToString(); 
-                        spMuaNode.AppendChild(soLuongMua);
-                        hoaDonNode.AppendChild(spMuaNode);
-                    }
-                    lichSuNode.AppendChild(hoaDonNode);
-                }
-                khNode.AppendChild(lichSuNode);
-                root.AppendChild(khNode);
             }
             doc.Save(duongdan);
         }

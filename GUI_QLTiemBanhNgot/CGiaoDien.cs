@@ -354,7 +354,7 @@ namespace GUI_QLTiemBanhNgot
             foreach (CKhachHang obj in dsTmp)
             {
                 Console.WriteLine();
-                obj.HienThiThongTin();
+                Console.WriteLine($"Mã KH: {obj.MaKH}, Tên: {obj.TenKH}, SĐT: {obj.SoDienThoai}");
                 Console.WriteLine($"Đã mua tổng cộng: {obj.TinhTongSoSanPhamDaMua()} sản phẩm.");
             }
         }
@@ -366,7 +366,7 @@ namespace GUI_QLTiemBanhNgot
             XuatDanhSachPhanLoai(dsTmp);
         }
         //Hàm helper
-        static void XuatDanhSachPhanLoai(List<CSanPham> dssp)
+        private static void XuatDanhSachPhanLoai(List<CSanPham> dssp)
         {
             List<CBanhNgot> dsBanhNgot = dssp.OfType<CBanhNgot>().ToList();
             List<CBanhKem> dsBanhKem = dssp.OfType<CBanhKem>().ToList();
@@ -411,14 +411,14 @@ namespace GUI_QLTiemBanhNgot
                 }
             }
         }
-        static void XuatTieuDeCanGiua(string tieude, int chieurong)
+        private static void XuatTieuDeCanGiua(string tieude, int chieurong)
         {
             int khoangcach = (chieurong - tieude.Length) / 2;
             string chuoikhoangcach = new string(' ', Math.Max(0, khoangcach)); 
 
             Console.WriteLine(chuoikhoangcach + tieude);
         }
-        static string NhapChuoiHopLe(string tenThongTin)
+        private static string NhapChuoiHopLe(string tenThongTin)
         {
             string input;
             while (true)
@@ -434,7 +434,7 @@ namespace GUI_QLTiemBanhNgot
             }
             return input;
         }
-        static double NhapSoThucHopLe(string tenThongTin)
+        private static double NhapSoThucHopLe(string tenThongTin)
         {
             double ketqua;
             while (true)
@@ -458,7 +458,7 @@ namespace GUI_QLTiemBanhNgot
             }
             return ketqua;
         }
-        static int NhapSoNguyenHopLe(string tenThongTin)
+        private static int NhapSoNguyenHopLe(string tenThongTin)
         {
             int ketqua;
             while (true)
@@ -482,7 +482,7 @@ namespace GUI_QLTiemBanhNgot
             }
             return ketqua;
         }
-        static DateTime NhapNSXHopLe()
+        private static DateTime NhapNSXHopLe()
         {
             DateTime ketqua;
             while (true)
@@ -509,7 +509,7 @@ namespace GUI_QLTiemBanhNgot
             }
             return ketqua;
         }
-        static DateTime NhapHSDHopLe(DateTime hsd)
+        private static DateTime NhapHSDHopLe(DateTime hsd)
         {
             DateTime ketqua;
             while (true)

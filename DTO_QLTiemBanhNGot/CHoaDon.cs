@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 
 namespace DTO_QLTiemBanhNgot
 {
@@ -39,17 +38,20 @@ namespace DTO_QLTiemBanhNgot
             _chiTietDonHang = new Dictionary<CSanPham, int>();
             NgayMua = DateTime.Now;
         }
-
         public CHoaDon(string mahd, DateTime ngaymua, Dictionary<CSanPham, int> chitiethoadoncu)
         {
             MaHD = mahd;
             NgayMua = ngaymua;
             _chiTietDonHang = chitiethoadoncu;
         }
+        
         public double TinhTienTroGiaMotSP(CSanPham obj)
         {
             double tienTroGiaSP = 0;
-            if (obj is ITroGia troGiaObject)
+
+            ITroGia troGiaObject = obj as ITroGia;
+
+            if (troGiaObject != null)
             {
                 tienTroGiaSP += troGiaObject.TinhTienTroGia();
             }
@@ -77,7 +79,7 @@ namespace DTO_QLTiemBanhNgot
                     giaSauKhuyenMai = 0;
 
                 double thanhTienCuaMuc = giaSauKhuyenMai * soluong;
-                if (obj is CBanhHandmade)
+                if (obj.GetType() == typeof(CBanhHandmade))
                 {
                     tongTienBanhHandmade += thanhTienCuaMuc;
                     soLuongBanhHandmade += soluong;

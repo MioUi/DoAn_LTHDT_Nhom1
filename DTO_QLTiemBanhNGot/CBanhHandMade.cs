@@ -22,12 +22,6 @@ namespace DTO_QLTiemBanhNgot
             DongBanh = dongbanh;
         }
 
-        public override void HienThiThongTin()
-        {
-            base.HienThiThongTin();
-            Console.WriteLine($"Dòng bánh: {DongBanh}");
-        }
-
         public double TinhTienTroGia()
         {
             return 2000;

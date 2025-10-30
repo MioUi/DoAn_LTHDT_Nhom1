@@ -21,7 +21,6 @@ namespace DTO_QLTiemBanhNgot
                     _maSP = value;
             }
         }
-
         public string TenBanh
         {
             get { return _tenBanh; }
@@ -33,7 +32,6 @@ namespace DTO_QLTiemBanhNgot
                     _tenBanh = value;
             }
         }
-
         public DateTime NgaySanXuat
         {
             get { return _ngaySanXuat; }
@@ -45,7 +43,6 @@ namespace DTO_QLTiemBanhNgot
                     _ngaySanXuat = value;
             }
         }
-
         public DateTime HanSuDung
         {
             get { return _hanSuDung; }
@@ -57,7 +54,6 @@ namespace DTO_QLTiemBanhNgot
                     _hanSuDung = value;
             }
         }
-
         public double GiaBan
         {
             get { return _giaBan; }
@@ -79,14 +75,7 @@ namespace DTO_QLTiemBanhNgot
             HanSuDung = hansudung;
             GiaBan = giaban;
         }
-        public virtual void HienThiThongTin()
-        {
-            Console.WriteLine($"MaSP: {MaSP}");
-            Console.WriteLine($"Ten: {TenBanh}");
-            Console.WriteLine($"NSX: {NgaySanXuat.ToString("dd/MM/yyyy")}");
-            Console.WriteLine($"HSD: {HanSuDung.ToString("dd/MM/yyyy")}");
-            Console.WriteLine($"Gia ban: {GiaBan} VND");
-        }
+
         public abstract double TinhTienGiamGia();
     }
 }
